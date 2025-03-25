@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--/* 여러 div를 블록으로 묶어서 반복 돌고 싶을 때 th:block 사용 가능. 렌더링 시 th:block은 제거됨 */-->
+<th:block th:each="user : ${users}">
+    <div>
+        사용자 이름 <span th:text="${userStat.count}"></span> : <span th:text="${user.username}"></span>
+        , 사용자 나이 : <span th:text="${user.age}"></span>
+    </div>
+    <div>
+        요약 <span th:text="${user.username} + ' / ' + ${user.age}"></span>
+    </div>
+</th:block>
+</body>
+</html>
